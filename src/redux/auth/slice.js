@@ -1,18 +1,10 @@
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from '@reduxjs/toolkit';
 const {
   signUpThunk,
   logInThunk,
   logOutThunk,
   refreshUserThunk,
 } = require('./thunks');
-
-const handlePending = state => {
-  state.isLoading = true;
-};
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-};
 
 const initialState = {
   isLoading: false,
@@ -28,6 +20,9 @@ const signUpSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
+      .addCase(signUpThunk.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(signUpThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -36,11 +31,25 @@ const signUpSlice = createSlice({
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
+      .addCase(signUpThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(logInThunk.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(logInThunk.fulfilled, (state, action) => {
         state.error = null;
         state.token = action.payload.token;
         state.user = action.payload.user;
         state.isLoggedIn = true;
+      })
+      .addCase(logInThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(logOutThunk.pending, state => {
+        state.isLoading = true;
       })
       .addCase(logOutThunk.fulfilled, state => {
         state.user = { name: null, email: null };
@@ -49,13 +58,22 @@ const signUpSlice = createSlice({
         state.isLoading = false;
         state.isLoggedIn = false;
       })
+      .addCase(logOutThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(refreshUserThunk.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(refreshUserThunk.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
-      .addMatcher(action => action.type.endsWith('/pending'), handlePending)
-      .addMatcher(action => action.type.endsWith('/rejected'), handleRejected);
+      .addCase(refreshUserThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
 

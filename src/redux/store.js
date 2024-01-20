@@ -20,7 +20,7 @@ const persistConfig = {
   storage,
 };
 const persistSignUpConfig = {
-  key: 'signUp',
+  key: 'signup',
   storage,
   whitelist: ['token'],
 };
@@ -35,7 +35,7 @@ export const store = configureStore({
   reducer: {
     contacts: persistedReducer,
     filter: filterReducer,
-    signup: persistedReducerSignUp(signUpReducer),
+    signup: persistedReducerSignUp(persistSignUpConfig, signUpReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
