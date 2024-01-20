@@ -1,20 +1,28 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.module.css';
 import '../redux/store';
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUserThunk } from '../redux/auth/thunks';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const RegistrationPage = lazy(() => import('../pages/RegistrationPage'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
+
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
           {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       </Suspense>

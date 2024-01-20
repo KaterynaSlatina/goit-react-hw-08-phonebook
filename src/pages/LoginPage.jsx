@@ -1,5 +1,7 @@
 import FormLogin from 'components/FormLogin/FormLogin';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   return <FormLogin />;
 };
+
+export default LoginPage;
