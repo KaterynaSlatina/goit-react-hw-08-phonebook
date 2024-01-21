@@ -1,8 +1,23 @@
 import { Link } from 'react-router-dom';
+import { logInThunk } from '../../redux/auth/thunks';
+import { useDispatch } from 'react-redux';
 
 export const FormLogin = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
+
+    const form = e.currentTarget;
+
+    dispatch(
+      logInThunk({
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+
+    form.reset();
   };
   return (
     <div>
@@ -24,4 +39,5 @@ export const FormLogin = () => {
     </div>
   );
 };
-export default FormLogin;
+
+// export default FormLogin;

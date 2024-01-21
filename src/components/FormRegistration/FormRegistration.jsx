@@ -7,8 +7,7 @@ const FormRegistration = ({ register }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // const { name, email, password } = e.target.elements;
-    // register({ name, email, password });
+
     const form = e.currentTarget;
 
     dispatch(
@@ -19,7 +18,7 @@ const FormRegistration = ({ register }) => {
       })
     );
 
-    e.currentTarget.reset();
+    form.reset();
   };
 
   return (
