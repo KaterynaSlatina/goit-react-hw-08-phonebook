@@ -1,23 +1,23 @@
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { signUpThunk } from '../../redux/auth/thunks';
+import { signUpThunk } from '../../redux/auth/thunks';
 
 const FormRegistration = ({ register }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    const { name, email, password } = e.target.elements;
-    register({ name, email, password });
-    // const form = e.currentTarget;
+    // const { name, email, password } = e.target.elements;
+    // register({ name, email, password });
+    const form = e.currentTarget;
 
-    // dispatch(
-    //   signUpThunk({
-    //     name: form.elements.name.value,
-    //     email: form.elements.email.value,
-    //     password: form.elements.password.value,
-    //   })
-    // );
+    dispatch(
+      signUpThunk({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
 
     e.currentTarget.reset();
   };
