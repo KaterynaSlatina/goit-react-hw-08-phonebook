@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
+// додати токен в строку http:
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
@@ -40,7 +41,7 @@ export const logOutThunk = createAsyncThunk(
   '/users/logout',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.post('/users/login');
+      const response = await axios.post('/users/logout');
       clearAuthHeader();
       return response.data;
     } catch (e) {
@@ -53,7 +54,7 @@ export const refreshUserThunk = createAsyncThunk(
   '/users/current',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    const persistedToken = state.signUp.token;
+    const persistedToken = state.signup.token;
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }

@@ -15,27 +15,27 @@ import {
 } from 'redux-persist';
 import { signUpReducer } from './auth/slice';
 
-const persistConfig = {
-  key: 'contacts',
-  storage,
-};
+// const persistConfig = {
+//   key: 'contacts',
+//   storage,
+// };
 const persistSignUpConfig = {
   key: 'signup',
   storage,
   whitelist: ['token'],
 };
 
-const persistedReducer = persistReducer(persistConfig, contactReducer);
-const persistedReducerSignUp = persistReducer(
-  persistSignUpConfig,
-  signUpReducer
-);
+// const persistedReducer = persistReducer(persistConfig, contactReducer);
+// const persistedReducerSignUp = persistReducer(
+//   persistSignUpConfig,
+//   signUpReducer
+// );
 
 export const store = configureStore({
   reducer: {
-    contacts: persistedReducer,
+    contacts: contactReducer,
     filter: filterReducer,
-    signup: persistedReducerSignUp(persistSignUpConfig, signUpReducer),
+    signup: persistReducer(persistSignUpConfig, signUpReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

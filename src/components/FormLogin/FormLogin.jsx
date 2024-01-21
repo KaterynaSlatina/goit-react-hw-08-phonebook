@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const FormLogin = () => {
+export const FormLogin = () => {
   const handleSubmit = e => {
     e.preventDefault();
   };
