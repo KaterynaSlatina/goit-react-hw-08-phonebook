@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { logInThunk } from '../../redux/auth/thunks';
 import { useDispatch } from 'react-redux';
 
-export const FormLogin = () => {
+export const FormLogin = ({ login }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {

@@ -31,7 +31,7 @@ const signUpSlice = createSlice({
       })
       .addCase(logOutThunk.fulfilled, state => {
         state.user = { name: null, email: null };
-        state.token = null;
+        state.token = '';
         state.isLoggedIn = false;
       })
       .addCase(refreshUserThunk.pending, state => {
@@ -44,6 +44,8 @@ const signUpSlice = createSlice({
       })
       .addCase(refreshUserThunk.rejected, state => {
         state.isRefreshing = false;
+        state.token = '';
+        state.user = null;
       });
   },
 });
