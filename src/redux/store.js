@@ -20,7 +20,7 @@ const persistSignUpConfig = {
   storage,
   whitelist: ['token'],
 };
-
+//
 export const store = configureStore({
   reducer: {
     contacts: contactReducer,

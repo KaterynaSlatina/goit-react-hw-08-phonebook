@@ -8,6 +8,7 @@ import { selectIsRefreshing, selectUser } from '../redux/auth/selectors';
 // import Layout from './Layout';
 import { RestrictedRoute } from '../components/RestrictedRoute';
 import { PrivateRoute } from '../components/PrivateRoute';
+import Layout from './Layout/Layout';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
@@ -29,13 +30,14 @@ export const App = () => {
     <div>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          {/* <Route path="/" element={<Layout />}> */}
+          <Route path="/" element={<Layout />} />
+
           <Route index element={<HomePage />} />
           <Route
             path="/registration"
             element={
               <RestrictedRoute
-                redirectTo="/contacts"
+                redirectTo="/login"
                 component={<RegistrationPage />}
               />
             }
@@ -55,7 +57,7 @@ export const App = () => {
               <PrivateRoute redirectTo="/login" component={<Contacts />} />
             }
           />
-          {/* </Route> */}
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>
     </div>
