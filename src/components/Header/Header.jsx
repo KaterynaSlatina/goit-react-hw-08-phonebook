@@ -1,22 +1,25 @@
-import { NavLink } from 'react-router-dom';
+import { MyHeader, MenuListItem, MenuList } from '../Header/Header.styled';
 
 const Header = () => {
   return (
-    <header>
+    <MyHeader>
       <nav>
-        <ul>
+        <MenuList>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <MenuListItem to="/">Home</MenuListItem>
           </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <MenuListItem to="/contacts">Contacts</MenuListItem>
           </li>
           <li>
-            <NavLink to="/registration">Registration</NavLink>
+            <MenuListItem to="/login">Login</MenuListItem>
           </li>
-        </ul>
+          {/* <li>
+            <MenuListItem to="/registration">Registration</MenuListItem>
+          </li> */}
+        </MenuList>
       </nav>
-    </header>
+    </MyHeader>
   );
 };
 

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { logInThunk } from '../../redux/auth/thunks';
 import { useDispatch } from 'react-redux';
+import { LoginBtn, LoginLink } from './FormLogin.styled';
 
 export const FormLogin = ({ login }) => {
   const dispatch = useDispatch();
@@ -20,24 +20,22 @@ export const FormLogin = ({ login }) => {
     form.reset();
   };
   return (
-    <div>
-      {/* <Link to="/">Home</Link> */}
+    <form onSubmit={handleSubmit}>
+      <div>
+        <input type="email" name="email" id="inputEmail" placeholder="email" />
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="inputEmail">Email address</label>
-          <input type="email" name="email" id="inputEmail" />
-        </div>
+      <div>
+        <input
+          type="password"
+          name="password"
+          id="inputPassword"
+          placeholder="password"
+        />
+      </div>
+      <LoginBtn type="submit">Login</LoginBtn>
 
-        <div>
-          <label htmlFor="inputPassword">Password</label>
-          <input type="password" name="password" id="inputPassword" />
-          <button type="submit">Login</button>
-        </div>
-        <Link to="/registration">Registration</Link>
-      </form>
-    </div>
+      <LoginLink to="/registration">Registration</LoginLink>
+    </form>
   );
 };
-
-// export default FormLogin;

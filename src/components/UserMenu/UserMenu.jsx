@@ -2,18 +2,19 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/selectors';
 import { logOutThunk } from '../../redux/auth/thunks';
+import { LogOutBtn, UserHeader, WelcomeUser } from './UserMenu.styled';
 
 const UserMenu = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>Welcome to Phonebook, {user.name} </h1>
-      <button type="button" onClick={() => dispatch(logOutThunk())}>
+    <UserHeader>
+      <WelcomeUser>Welcome to Phonebook, {user.name} </WelcomeUser>
+      <LogOutBtn type="button" onClick={() => dispatch(logOutThunk())}>
         Logout
-      </button>
-    </div>
+      </LogOutBtn>
+    </UserHeader>
   );
 };
 

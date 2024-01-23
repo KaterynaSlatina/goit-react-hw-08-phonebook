@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { signUpThunk } from '../../redux/auth/thunks';
+import { RegisterBtn, RegisterLink } from './FormRegistration.styled';
 
 const FormRegistration = ({ register }) => {
   const dispatch = useDispatch();
@@ -23,25 +23,34 @@ const FormRegistration = ({ register }) => {
 
   return (
     <div>
-      <Link to="/">Home</Link>
-
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="inputName">Name</label>
-          <input type="text" name="name" id="inputName" />
+          {/* <label htmlFor="inputName">Name</label> */}
+          <input type="text" name="name" id="inputName" placeholder="name" />
         </div>
 
         <div>
-          <label htmlFor="inputEmail">Email address</label>
-          <input type="email" name="email" id="inputEmail" />
+          {/* <label htmlFor="inputEmail">Email address</label> */}
+          <input
+            type="email"
+            name="email"
+            id="inputEmail"
+            placeholder="email"
+          />
         </div>
 
         <div>
-          <label htmlFor="inputPassword">Password</label>
-          <input type="password" name="password" id="inputPassword" />
-          <button type="submit">Registration </button>
+          {/* <label htmlFor="inputPassword">Password</label> */}
+          <input
+            type="password"
+            name="password"
+            id="inputPassword"
+            placeholder="password"
+          />
         </div>
-        <Link to="/login">Login</Link>
+        <RegisterBtn type="submit">Registration </RegisterBtn>
+
+        <RegisterLink to="/login">Login</RegisterLink>
       </form>
     </div>
   );

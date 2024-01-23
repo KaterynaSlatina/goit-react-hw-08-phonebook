@@ -16,8 +16,9 @@ form {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
   font-size: 20px;
+  width: 400px;
+  background-color: rgba(242, 246, 247, 0.5);
 }
 
 input {
@@ -25,6 +26,9 @@ input {
   height: 30px;
   margin-top: 10px;
   margin-bottom: 15px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
 }
 
 label {
@@ -37,3 +41,25 @@ label {
 ul {
   list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-size: 18px;
+  background: rgba(34, 113, 179, 0.5);
+  border-radius: 20px;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 51, 153, 0.8);
+    color: aliceblue;
+    transition: 0.3s;
+  }
+}
+
+/* li {
+  border: none;
+} */
