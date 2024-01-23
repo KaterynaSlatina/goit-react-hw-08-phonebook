@@ -1,4 +1,5 @@
-import { deleteContact } from '../../redux/contacts/operations';
+import { useEffect } from 'react';
+import { deleteContact, fetchContacts } from '../../redux/contacts/operations';
 import {
   // selectContacts,
   // selectFilter,
@@ -10,7 +11,13 @@ import { useDispatch, useSelector } from 'react-redux';
 export const ContactList = () => {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   // const contacts = useSelector(selectContacts);
+  const contacts = useSelector(selectVisibleContacts);
+
   // const filter = useSelector(selectFilter);
 
   // const findContacts = Array.isArray(contacts)
@@ -18,7 +25,6 @@ export const ContactList = () => {
   //       contact.name.toLowerCase().includes(filter.toLowerCase())
   //     )
   //   : [];
-  const contacts = useSelector(selectVisibleContacts);
 
   // const deleteContact = id => {
   //   dispatch(deleteContact(id));

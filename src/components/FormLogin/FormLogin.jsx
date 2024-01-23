@@ -21,7 +21,7 @@ export const FormLogin = ({ login }) => {
   };
   return (
     <div>
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link> */}
 
       <form onSubmit={handleSubmit}>
         <div>

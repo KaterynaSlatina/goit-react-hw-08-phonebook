@@ -1,9 +1,9 @@
-import Header from '../components/Header/Header';
+// import Header from '../components/Header/Header';
 
 const HomePage = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div>Welcome to the PhoneBook</div>
     </>
   );

@@ -10,11 +10,9 @@ const UserMenu = () => {
   return (
     <div>
       <h1>Welcome to Phonebook, {user.name} </h1>
-      {/* Відображення привітання з ім'ям користувача  */}
       <button type="button" onClick={() => dispatch(logOutThunk())}>
         Logout
       </button>
-      {/* Кнопка для виходу з облікового запису користувача  */}
     </div>
   );
 };

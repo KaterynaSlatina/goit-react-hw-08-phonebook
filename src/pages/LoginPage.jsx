@@ -18,7 +18,12 @@ const LoginPage = () => {
     dispatch(logInThunk(body));
   };
 
-  return <FormLogin login={login} />;
+  return (
+    <div>
+      <h2>To access contacts, please login</h2>
+      <FormLogin login={login} />
+    </div>
+  );
 };
 
 export default LoginPage;

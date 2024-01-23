@@ -16,11 +16,9 @@ export const FormContact = () => {
       name: e.target.elements.name.value,
       number: e.target.elements.number.value,
     };
-    const isNameExist =
-      Array.isArray(contacts) &&
-      contacts.some(
-        contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
-      );
+    const isNameExist = contacts.some(
+      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+    );
 
     if (isNameExist) {
       alert(`${newContact.name} is already in contacts!`);
