@@ -3,9 +3,19 @@ body {
   background-color: white;
   padding: 0;
 }
+
+h1 {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 40px;
+  color: rgba(1, 1, 122, 0.8);
+}
+
 h2 {
   text-align: center;
   margin-top: 60px;
+  font-size: 30px;
+  color: rgba(1, 1, 122, 0.8);
 }
 
 form {
@@ -17,15 +27,17 @@ form {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 20px;
-  width: 400px;
+  max-width: 400px;
   background-color: rgba(242, 246, 247, 0.5);
 }
 
 input {
+  font-size: 18px;
   width: 300px;
+  /* margin: auto; */
   height: 30px;
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-radius: 20px;
   text-align: center;
   display: flex;
@@ -35,19 +47,22 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
+  color: navy;
 }
 
 button {
   font-size: 18px;
+  color: navy;
   background: rgba(34, 113, 179, 0.5);
   border-radius: 20px;
   border: none;
@@ -59,7 +74,3 @@ button {
     transition: 0.3s;
   }
 }
-
-/* li {
-  border: none;
-} */

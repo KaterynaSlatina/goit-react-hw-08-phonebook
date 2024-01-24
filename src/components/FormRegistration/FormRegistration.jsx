@@ -23,6 +23,7 @@ const FormRegistration = ({ register }) => {
 
   return (
     <div>
+      <h2>Please, register to use contacts</h2>
       <form onSubmit={handleSubmit}>
         <div>
           {/* <label htmlFor="inputName">Name</label> */}

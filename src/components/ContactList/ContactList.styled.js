@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const ContactContainer = styled.div`
   background-color: rgba(242, 246, 247, 0.5);
-  width: 400px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,4 +32,9 @@ export const ContactItem = styled.li`
 export const ContactText = styled.p`
   text-transform: capitalize;
   padding-right: 40px;
+`;
+
+export const DelContactBtn = styled.button`
+  padding-left: 10px;
+  padding-right: 10px;
 `;

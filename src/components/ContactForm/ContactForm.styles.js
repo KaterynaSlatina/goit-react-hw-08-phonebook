@@ -9,3 +9,8 @@ export const Input = styled.input`
   border-radius: 20px;
   text-align: center;
 `;
+
+export const AddContactBtn = styled.button`
+  padding-left: 10px;
+  padding-right: 10px;
+`;

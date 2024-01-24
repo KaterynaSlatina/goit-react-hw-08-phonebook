@@ -10,7 +10,7 @@ const UserMenu = () => {
 
   return (
     <UserHeader>
-      <WelcomeUser>Welcome to Phonebook, {user.name} </WelcomeUser>
+      <WelcomeUser>Welcome to the Phonebook, {user.name}! </WelcomeUser>
       <LogOutBtn type="button" onClick={() => dispatch(logOutThunk())}>
         Logout
       </LogOutBtn>

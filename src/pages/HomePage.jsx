@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <>
       {/* <Header /> */}
-      <div>Welcome to the PhoneBook</div>
+      <h1>Welcome to the PhoneBook!</h1>
     </>
   );
 };

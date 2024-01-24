@@ -6,6 +6,7 @@ import {
   ContactContainer,
   ContactItem,
   ContactText,
+  DelContactBtn,
   MyContacts,
 } from './ContactList.styled';
 
@@ -26,9 +27,12 @@ export const ContactList = () => {
             <ContactText>
               {name} : {number}
             </ContactText>
-            <button type="button" onClick={() => dispatch(deleteContact(id))}>
+            <DelContactBtn
+              type="button"
+              onClick={() => dispatch(deleteContact(id))}
+            >
               Delete
-            </button>
+            </DelContactBtn>
           </ContactItem>
         ))}
       </MyContacts>

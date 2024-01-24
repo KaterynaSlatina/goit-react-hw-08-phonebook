@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const RegisterBtn = styled.button`
   cursor: pointer;
-  color: navy;
   background: rgba(34, 113, 179, 0.5);
   border-radius: 20px;
   width: 300px;

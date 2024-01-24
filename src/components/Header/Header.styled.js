@@ -15,6 +15,7 @@ export const MenuListItem = styled(NavLink)`
   border-radius: 25px;
   border: 1px solid;
   margin-bottom: 20px;
+  transition: 0.3s;
 
   &.active {
     background: rgba(34, 113, 179, 0.5);
@@ -38,6 +39,7 @@ export const MyHeader = styled.header`
   border: none;
   margin-bottom: 20px;
   position: relative;
+
   &:after {
     content: '';
     display: block;

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { addContact } from '../../redux/contacts/operations';
 import { selectVisibleContacts } from '../../redux/contacts/selectors';
-import { ContactForm } from './ContactForm.styles';
+import { AddContactBtn, ContactForm } from './ContactForm.styles';
 
 export const FormContact = () => {
   const contacts = useSelector(selectVisibleContacts);
@@ -42,7 +42,7 @@ export const FormContact = () => {
           <input type="tel" name="number" required />
         </label>
 
-        <button type="submit">Add contact</button>
+        <AddContactBtn type="submit">Add contact</AddContactBtn>
       </ContactForm>
     </div>
   );

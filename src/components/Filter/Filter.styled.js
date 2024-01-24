@@ -9,6 +9,6 @@ export const FilterContainer = styled.label`
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 20px;
-  width: 400px;
+  max-width: 400px;
   background-color: rgba(242, 246, 247, 0.5);
 `;
