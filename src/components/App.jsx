@@ -1,11 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.module.css';
 import '../redux/store';
 import { Suspense, lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUserThunk } from '../redux/auth/thunks';
 import { selectIsRefreshing } from '../redux/auth/selectors';
-// import Layout from './Layout';
 import { RestrictedRoute } from '../components/RestrictedRoute';
 import { PrivateRoute } from '../components/PrivateRoute';
 import Layout from './Layout/Layout';
@@ -18,12 +16,6 @@ const Contacts = lazy(() => import('../pages/Contacts'));
 export const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
-
-  // const user = useSelector(selectUser);
-
-  // useEffect(() => {
-  //   user && dispatch(refreshUserThunk());
-  // }, [dispatch, user]);
 
   useEffect(() => {
     dispatch(refreshUserThunk());

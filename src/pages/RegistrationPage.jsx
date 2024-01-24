@@ -22,7 +22,6 @@ const RegistrationPage = () => {
   console.log('user', user);
 
   return <FormRegistration register={register} />;
-  // return <FormRegistration />;
 };
 
 export default RegistrationPage;

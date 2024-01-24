@@ -14,9 +14,6 @@ const Header = () => {
           <li>
             <MenuListItem to="/login">Login</MenuListItem>
           </li>
-          {/* <li>
-            <MenuListItem to="/registration">Registration</MenuListItem>
-          </li> */}
         </MenuList>
       </nav>
     </MyHeader>

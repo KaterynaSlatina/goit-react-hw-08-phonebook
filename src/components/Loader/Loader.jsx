@@ -1,12 +1,11 @@
 import React from 'react';
 import 'react-loader-spinner';
 import { Rings } from 'react-loader-spinner';
+import { LoaderRing } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <div
-    //   className={css.loader}
-    >
+    <LoaderRing>
       <Rings
         height="80"
         width="80"
@@ -14,6 +13,6 @@ export const Loader = () => {
         color="green"
         ariaLabel="three-dots-loading"
       />
-    </div>
+    </LoaderRing>
   );
 };

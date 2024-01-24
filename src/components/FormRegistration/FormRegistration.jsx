@@ -26,12 +26,10 @@ const FormRegistration = ({ register }) => {
       <h2>Please, register to use contacts</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          {/* <label htmlFor="inputName">Name</label> */}
           <input type="text" name="name" id="inputName" placeholder="name" />
         </div>
 
         <div>
-          {/* <label htmlFor="inputEmail">Email address</label> */}
           <input
             type="email"
             name="email"
@@ -41,7 +39,6 @@ const FormRegistration = ({ register }) => {
         </div>
 
         <div>
-          {/* <label htmlFor="inputPassword">Password</label> */}
           <input
             type="password"
             name="password"

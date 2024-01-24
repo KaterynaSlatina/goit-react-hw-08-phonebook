@@ -35,7 +35,6 @@ export const MenuListItem = styled(NavLink)`
 
 export const MyHeader = styled.header`
   font-size: 20px;
-  /* width: 100%; */
   border: none;
   margin-bottom: 20px;
   position: relative;
