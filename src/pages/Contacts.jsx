@@ -6,8 +6,8 @@ const Contacts = () => {
   return (
     <div>
       <FormContact />
-      <ContactList />
       <Filter />
+      <ContactList />
     </div>
   );
 };

@@ -5,12 +5,7 @@ import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  return (
-    <div>
-      {isLoggedIn ? <UserMenu /> : <Header />}
-      {/* Відображаємо UserMenu, якщо користувач аутентифікований, або AuthNav, якщо користувач неаутентифікований */}
-    </div>
-  );
+  return <div>{isLoggedIn ? <UserMenu /> : <Header />}</div>;
 };
 
 export default AppBar;

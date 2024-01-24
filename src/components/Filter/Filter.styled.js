@@ -11,4 +11,5 @@ export const FilterContainer = styled.label`
   font-size: 20px;
   max-width: 400px;
   background-color: rgba(242, 246, 247, 0.5);
+  margin-bottom: 20px;
 `;
