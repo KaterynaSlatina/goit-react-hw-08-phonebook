@@ -16,9 +16,8 @@ export const FormLogin = ({ login }) => {
         password: form.elements.password.value,
       })
     );
-
-    form.reset();
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div>

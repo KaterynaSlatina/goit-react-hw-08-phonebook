@@ -32,6 +32,9 @@ export const logInThunk = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
+      if (e.response.status === 400) {
+        alert('Invalid email or password. Please try again.');
+      }
       return thunkAPI.rejectWithValue(e.message);
     }
   }

@@ -23,7 +23,7 @@ export const MenuListItem = styled(NavLink)`
     border: none;
   }
   &:hover {
-    color: aliceblue;
+    /* color: aliceblue; */
     border: none;
     display: flex;
 

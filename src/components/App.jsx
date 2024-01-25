@@ -54,7 +54,12 @@ export const App = () => {
               }
             />
           </Route>
-          <Route path="*" element={<HomePage />} />
+          <Route
+            path="*"
+            element={
+              <PrivateRoute redirectTo="/contacts" component={<HomePage />} />
+            }
+          />
         </Routes>
       </Suspense>
     </div>

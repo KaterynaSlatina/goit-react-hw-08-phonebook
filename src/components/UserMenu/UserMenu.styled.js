@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const WelcomeUser = styled.p`
   text-align: center;
@@ -25,5 +26,29 @@ export const UserHeader = styled.div`
     height: 1px;
     border: 1px;
     background-color: #f6f5ef33;
+  }
+`;
+
+export const ContactsPath = styled(NavLink)`
+  font-size: 18px;
+  color: navy;
+  background: rgba(34, 113, 179, 0.5);
+  border-radius: 20px;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  &.active {
+    background-color: rgba(0, 51, 153, 0.8);
+    color: aliceblue;
+    border: none;
+  }
+  &:hover {
+    background-color: rgba(0, 51, 153, 0.8);
+    color: aliceblue;
+    transition: 0.3s;
   }
 `;
