@@ -19,7 +19,7 @@ export const ContactList = () => {
 
   const contacts = useSelector(selectVisibleContacts);
 
-  return (
+  return contacts.length > 0 ? (
     <ContactContainer>
       <MyContacts>
         {contacts.map(({ id, name, number }) => (
@@ -37,5 +37,9 @@ export const ContactList = () => {
         ))}
       </MyContacts>
     </ContactContainer>
+  ) : (
+    <form>
+      <p>No contacts</p>
+    </form>
   );
 };
